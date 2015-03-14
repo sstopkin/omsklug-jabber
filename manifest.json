@@ -1,0 +1,25 @@
+﻿{
+    "name": "Конференция OmskLUG",
+    "version": "0.0.1.0",
+    "description": "Позволяет читать конференцию OmskLUG в хроме и писать в нее",
+    "manifest_version": 2,
+
+    "background": {
+        "scripts":	["thirdparty/jquery.min.js",
+			"thirdparty/strophe.js",
+			"thirdparty/strophe.muc.js",
+			"bg.main.js"]
+    },
+    "content_security_policy": "script-src 'self' https://www.omsklug.com/; object-src 'self'",
+
+    "browser_action" : {
+        "default_icon"      : "favicon32x32.png",    
+	"default_popup"     :"popup.html"        // optional
+    },
+    "permissions": [
+        "tabs",
+	"notifications",
+	"http://*.jabber.ru/*",
+	"http://jabber.ru/"
+    ]//
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Сообщения OmskLUG</title>
+  <script type='text/javascript'
+	  src='thirdparty/jquery.min.js'></script>
+  <script type='text/javascript'
+	  src='thirdparty/strophe.js'></script>
+  <script type='text/javascript'
+	  src='thirdparty/strophe.muc.js'></script>
+  <script type='text/javascript'
+	  src='popup.js'></script>
+  <link rel="stylesheet" media="screen" type="text/css" href="popup.css" />
+</head>
+<body>
+	<div id='title' class='header'>
+		OmskLUG@conference.jabber.ru
+	</div>	
+
+	<ul id="tabul">
+	    <li id="litab" class="ntabs add"><a href="" id="addtab">+</a></li>
+	</ul>
+	<div id="tabcontent"></div>
+
+
+ 	<div id='content' class='wrapper'>
+		<ul id='messagelist' class='rounded-list'>
+		</ul>
+		<div class='push'></div>
+	</div>
+	<div id='sender' class='footer'>
+	    <form name='cred'>
+			<textarea id='message' name="message"></textarea>
+			<input type='button' id='post' value='Send' />
+	    </form>
+	</div>
+  </body>
+</html>
