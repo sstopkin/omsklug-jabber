@@ -1,25 +1,31 @@
-﻿{
-    "name": "Конференция OmskLUG",
-    "version": "0.0.1.0",
-    "description": "Позволяет читать конференцию OmskLUG в хроме и писать в нее",
+{
     "manifest_version": 2,
-
-    "background": {
-        "scripts":	["thirdparty/jquery.min.js",
-			"thirdparty/strophe.js",
-			"thirdparty/strophe.muc.js",
-			"bg.main.js"]
-    },
-    "content_security_policy": "script-src 'self' https://www.omsklug.com/; object-src 'self'",
-
-    "browser_action" : {
-        "default_icon"      : "favicon32x32.png",    
-	"default_popup"     :"popup.html"        // optional
-    },
+    "name": "OmskLUG Jabber Conference Reader",
+    "version": "0.0.3.0",
+    "description": "Позволяет читать и писать в jabber-конференцию OmskLUG в Google Chrome(Chromium)",
+    "homepage_url": "http://omsklug.com",
     "permissions": [
         "tabs",
-	"notifications",
-	"http://*.jabber.ru/*",
-	"http://jabber.ru/"
-    ]//
-}
+        "notifications",
+        "contextMenus",
+        "http://*/",
+        "https://*/"
+    ],
+    "background": {
+        "scripts": ["js/jquery-2.0.3.min.js",
+            "js/strophe/strophe.js",
+            "js/strophe/strophe.muc.js",
+            "js/lib.js",
+            "js/bg.main.js"]
+    },
+    "icons": {
+        "16": "img/icon16.png",
+        "48": "img/icon48.png",
+        "128": "img/icon128.png"
+    },
+    "content_security_policy": "script-src 'self' https://www.omsklug.com/; object-src 'self'",
+    "browser_action": {
+        "default_icon": "favicon32x32.png",
+        "default_popup": "pass.html"
+    }
+}        
