@@ -8,109 +8,56 @@
         <script type='text/javascript' src='js/strophe/strophe.js'></script>
         <script type='text/javascript' src='js/strophe/strophe.muc.js'></script>
         <script type='text/javascript' src='js/popup.js'></script>
+        <script type='text/javascript' src='js/lib.js'></script>
 
         <!-- Cascading Style Sheets -->
         <link href="css/bootstrap.min.css" rel="stylesheet" media="screen"/>
-        <link href="css/custom.css" rel="stylesheet" media="screen"/>
+        <ink href="css/custom.css" rel="stylesheet" media="screen"/>
         <link rel="stylesheet" media="screen" type="text/css" href="css/popup.css"/>
     </head>
     <body>
-<!--    
         <nav class="navbar navbar-default" role="navigation">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">Brand</a>
+                <a class="navbar-brand" href="#">Chat with:</a>
+                <form class="navbar-form pull-left">
+                    <select id="jids" style="width: 300px;" class="form-control">
+                    </select>
+                </form>
             </div>
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <div class="collapse navbar-collapse navbar-ex1-collapse pull-right">
                 <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="#">Link</a>
-                    </li>
-                    <li>
-                        <a href="#">Link</a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="glyphicon glyphicon-thumbs-up"></i>
-                        </a>
-                    </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tools <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="#">Action</a>
+                                <a href="#" id="reconnect">Reconnect</a>
                             </li>
                             <li>
-                                <a href="#">Another action</a>
-                            </li>
-                            <li>
-                                <a href="#">Something else here</a>
-                            </li>
-                            <li>
-                                <a href="#">Separated link</a>
-                            </li>
-                            <li>
-                                <a href="#">One more separated link</a>
+                                <a href="#" id="logout">Logout</a>
                             </li>
                         </ul>
                     </li>
                 </ul>
             </div>
         </nav>
-
-        <section>
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Username</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
--->
-
-
-        <div id='title' class='header'>
-            OmskLUG@conference.jabber.ru
-        </div>	
-
-        <ul id="tabul">
-            <li id="litab" class="ntabs add"><a href="" id="addtab">+</a></li>
-        </ul>
-        <div id="tabcontent"></div>
-
-
-        <div id='content' class='wrapper'>
-            <ul id='messagelist' class='rounded-list'>
-            </ul>
-            <div class='push'></div>
-        </div>
-        <div id='sender' class='footer'>
-            <form name='cred'>
-                <textarea id='message' name="message"></textarea>
-                <input type='button' id='post' value='Send' />
-            </form>
+        <div class=wrapper container>
+            <div class="content" style="overflow: auto;
+                 overflow-x: none;
+                 min-height: 100px; 
+                 height: 300px;">
+                <div class="span9">
+                    <div id="messages">
+                        <table class="table table-hover table-condensed" id="messagelist-conference">
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <footer id='sender' class="footer navbar-fixed-bottom well">
+                <textarea style="resize: none; width: 620px; height: 40px; bottom" id='message' name="message"></textarea>
+                <button class="btn btn-primary" type="button" id="post">Send</button>
+            </footer>
         </div>
     </body>
 </html>

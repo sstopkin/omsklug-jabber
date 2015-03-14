@@ -2,36 +2,37 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>Форма авторизации</title>
-        <script type='text/javascript' src="js/jquery-2.0.3.min.js"></script>
-        <script type='text/javascript' src="js/bootstrap.min.js"></script>
-        <script type='text/javascript' src='js/strophe/strophe.js'></script>
-        <script type='text/javascript' src='js/pass.js'></script>
+        <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/strophe/strophe.js"></script>
+        <script type="text/javascript" src="js/pass.js"></script>
+
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+        <link href="css/pass.css" rel="stylesheet" media="screen"/>
+
     </head>
     <body>
-        <div id='login' style='text-align: center'>
-            <form name='cred'>
-                <div class="input-group">
-                    <!--<input id="nick" type="text" class="form-control" placeholder="Nick" aria-describedby="basic-addon1">-->
-                    <input type='text' class="form-control" placeholder="Nick" id='nick'></input>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-md-offset-4">
+                    <h1 class="text-center login-title">Sign in to continue to OmskLUG</h1>
+                    <div class="account-wall">
+                        <img class="profile-img" src="img/OmskLUG Logo.png" alt="">
+                            <form class="form-signin">
+                                <input type="text" class="form-control" placeholder="Nick" id="nick"></input>
+                                <input type="text" class="form-control" placeholder="JID" id="jid" ></input>
+                                <input type="password" class="form-control" placeholder="Password" id="pass" />
+                                <button class="btn btn-lg btn-success btn-block" type="submit" id="store">Sign in</button>
+                                <!--                <label class="checkbox pull-left">
+                                                    <input type="checkbox" value="remember-me">
+                                                    Remember me
+                                                </label>-->
+                                <!--<a href="#" class="pull-right need-help">Need help? </a><span class="clearfix"></span>-->
+                            </form>
+                    </div>
+                    <!--            <a href="#" class="text-center new-account">Create an account </a>-->
                 </div>
-                <div class="input-group">
-                    <!--<input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">-->
-                    <input type='text' class="form-control" placeholder="JID" id='jid' ></input>
-                </div>
-                <div class="input-group">
-                    <!--<input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">-->
-                    <input type='password' class="form-control" placeholder="Password" id='pass' />
-                </div>
-                <input type='button' class="btn btn-default" id="store" value='Store' />
-                <!--<label for='nick'>Nick:</label>-->
-                <!--<input type='text' id='nick' />-->
-                <!--<label for='jid'>JID:</label>-->
-                <!--                <input type='text' id='jid' />-->
-                <!--<label for='pass'>Password:</label>-->
-                <!--                <input type='password' id='pass' />-->
-
-                <!--<button type="button" id='store' class="btn btn-default">Submit</button>-->
-            </form>
+            </div>
         </div>
     </body>
 </html>
