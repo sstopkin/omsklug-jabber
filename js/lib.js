@@ -19,36 +19,38 @@
 // OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-function buildMessage(nick, msg, classes){
-	classes= classes ? classes : "";
+function buildMessage(nick, msg, classes) {
+    classes = classes ? classes : "";
 // 	return "<tr class=\"message "+classes+"\"><td><span class=\"label label-info\">"+nick+": </span></td><td>"+msg+"</td></tr>";
- 	return "<tr class=\"message "+classes+"\"><td><span>"+nick+": </span></td><td>"+msg+"</td></tr>";
+// 	return "<tr class=\"message "+classes+"\"><td><span>"+nick+": </span></td><td>"+msg+"</td></tr>";
+    return "<div class=\"message " + classes + "\"><span>" + nick + ": </span>" + msg + "</div>";
 }
 
-function buildNick(nick){
-	return "<option class=nick id=\""+nick+"\">"+nick+"</option>";
+function buildNick(nick) {
+    return "<option class=nick id=\"" + nick + "\">" + nick + "</option>";
 }
 
-function buildTable(nick){
-	return "<table class=\"table table-hover table-condensed private-msg\" id=\"messagelist-"+escape(nick).split("%").join("-")+"\"><tbody></tbody></table>";
+function buildTable(nick) {
+//    return "<table class=\"table table-hover table-condensed private-msg\" id=\"messagelist-" + escape(nick).split("%").join("-") + "\"><tbody></tbody></table>";
+    return "<div id=\"messagelist-" + escape(nick).split("%").join("-") + "\"></div>";
 }
 
-function buildLabel(msg){
-	return "<span class=\"label label-warning\">"+msg+"</span>";
+function buildLabel(msg) {
+    return "<span class=\"label label-warning\">" + msg + "</span>";
 }
 
-function countUnread(object){
-	var returnie=0;
-	$(object).each(function(each){
-		if (localStorage["unread-"+$(this).text()]){
-			returnie+=localStorage["unread-"+$(this).text()]*1;
-		}
-	});
-	return (returnie+localStorage["unread-conference"]*1) > 0 ? returnie+localStorage["unread-conference"]*1 : "";
+function countUnread(object) {
+    var returnie = 0;
+    $(object).each(function (each) {
+        if (localStorage["unread-" + $(this).text()]) {
+            returnie += localStorage["unread-" + $(this).text()] * 1;
+        }
+    });
+    return (returnie + localStorage["unread-conference"] * 1) > 0 ? returnie + localStorage["unread-conference"] * 1 : "";
 }
 
-function log(msg) 
+function log(msg)
 {
 //    $('#log').append('<div></div>').append(document.createTextNode(msg));
-	console.log(msg);
+    console.log(msg);
 }
