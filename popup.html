@@ -12,7 +12,7 @@
 
         <!-- Cascading Style Sheets -->
         <link href="css/bootstrap.min.css" rel="stylesheet" media="screen"/>
-        <ink href="css/custom.css" rel="stylesheet" media="screen"/>
+        <link href="css/custom.css" rel="stylesheet" media="screen"/>
         <link rel="stylesheet" media="screen" type="text/css" href="css/popup.css"/>
     </head>
     <body>
@@ -61,9 +61,6 @@
         <div class="container">
             <div class="row row-offcanvas row-offcanvas-right">
                 <div class="col-xs-12 col-sm-9">
-                    <p class="pull-right visible-xs">
-                        asd
-                    </p>
                     <div id="messages" style="overflow: auto;
                          overflow-x: none;
                          min-height: 100px; 
@@ -82,15 +79,16 @@
                     </div>
                 </div>
             </div><!--/row-->
-            <hr>
-                <div class="row row-offcanvas row-offcanvas-right">
-                    <div class="col-xs-12 col-sm-9">
-                        <footer id="sender">
-                            <textarea style="resize: none; width: 620px; height: 40px; bottom" id='message' name="message"></textarea>
-                            <button class="btn btn-primary" type="button" id="post">Send</button>
-                        </footer>
+            <div class="row row-offcanvas row-offcanvas-right">
+                <div class="col-xs-12 col-sm-9">
+                    <div style="padding:5px; width:100%"><!--border:1px dotted #009999; -->
+                        <textarea style="width:100%; padding:5px; overflow:auto" id="message"></textarea><!--border:1px dotted #FF0000; -->
                     </div>
                 </div>
+                <div class="col-xs-6 col-sm-3 sidebar-offcanvas">
+                    <button class="btn btn-primary" type="button" id="post">Send</button>    
+                </div>
+            </div>
         </div>
     </body>
 </html>
