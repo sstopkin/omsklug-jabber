@@ -7,7 +7,12 @@ and open the template in the editor.
     Created on : Mar 15, 2015, 3:21:23 AM
     Author     : sstopkin
 */
-
+html, body {
+    /*	margin: 40px;*/
+    width: 750px;
+    min-height: 200px;
+    max-height: 400px;
+}
 .form-signin{max-width:330px;margin:0 auto;padding:15px;}
 .form-signin .form-signin-heading,.form-signin .checkbox{margin-bottom:10px;}
 .form-signin .checkbox{font-weight:normal;}
